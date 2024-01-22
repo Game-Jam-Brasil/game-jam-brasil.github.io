@@ -12,8 +12,12 @@ Love2D é uma engine/framework para jogos que usa a linguagem Lua para programa�
     - verificar se tecla, botões do mouse e controles está pressionado no update (ex: love.keyboard.isDown)
     - callbacks para pressionar e soltar teclas (love.keypressed, love.keypressed)
 - operações visuais como transladação, escala e rotação (translate, scale e rotate)
+- bom desempenho para jogos 2D simples
+
 
 ## Observações gerais sobre a linguagem Lua
+
+Documentação bem resumida: https://www.lua.org/manual/5.4/manual.html#2.1 
 
 Lua suporta vários tipos básicos e strings, com tipagem fraca:
 
@@ -38,13 +42,13 @@ end
 
 #### Tabelas
 
-Tabelas são a estrutura "tudo em um" da linguagem, funcionando como listas, coleções, hashmaps, objetos e estruturas. Fica na mão do desenvolvedor gerenciar o uso delas, de acordo com o contexto.
+Tabelas são a estrutura "tudo em um" da linguagem, funcionando como listas, coleções, hashmaps, "objetos" e estruturas. Fica na mão do desenvolvedor gerenciar o uso delas, de acordo com o contexto.
 
-IMPORTANTE: tabelas indexadas tem índice inicial **um**, não zero como em outras linguagens. 
+IMPORTANTE: tabelas indexadas tem índice inicial **um**, não zero como em outras linguagens. Operações com tabelas podem ser feitas diretas sobre os índices (similar à javascript) ou usando funções específicas (table.insert, table.remove, table.sort)
 
 #### Suporte à orientação a objetos
 
-Lua é uma linguagem multi-paradigma, puxando para o lado funcional (como Python). Há várias opções de abordagem para usar a linguagem, e suporte "indireto" à orientação à objetos. Dá para obter programar em uma forma similar à OO tradicional diretamente na linguagem, ou usar bibliotecas que facilitam essa operação (ver na lista abaixo de bibliotecas para Love2D).
+Lua é uma linguagem multi-paradigma, puxando para o lado funcional (similar Python). Há várias opções para usar a linguagem, e suporte "indireto" à orientação à objetos. Dá para programar em uma forma similar à OO tradicional diretamente na linguagem, ou usar bibliotecas que facilitam essa operação (ver na lista abaixo de bibliotecas para Love2D).
 
 ## Observações gerais sobre a Love2D
 
