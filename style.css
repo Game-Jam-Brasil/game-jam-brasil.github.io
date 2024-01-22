@@ -10,6 +10,11 @@ body {
     margin: 0
 }
 
+body.dark-mode {
+    background-color: rgb(34, 39, 46);
+    color:rgba(255, 255, 255, 0.5);
+}
+
 article,
 aside,
 details,
