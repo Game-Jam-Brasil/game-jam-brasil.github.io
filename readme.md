@@ -6,16 +6,15 @@ Links e referências variadas para uso em game jams, focando principalmente em L
 
 # Godot
 
-Site: https://godotengine.org/
+- Site: <https://godotengine.org/>
+- [Documentação em inglês (versão 4.2)](https://docs.godotengine.org/en/stable/)
+- [Documentação português brasileiro (versão 4.2)](https://docs.godotengine.org/pt-br/4.x/)
 
-Documentação (inglês): [Godot Engine 4.2 documentation in English](https://docs.godotengine.org/en/stable/)
-Documentação (português brasileiro): [Documentação da Godot Engine 4.2 em Português Brasileiro ](https://docs.godotengine.org/pt-br/4.x/)
-
+Links, tutoriais e referências para Love2D [nesta página](godot.md).
 
 # Love2D
 
-Site: https://love2d.org/
-
-Documentação (inglês): https://love2d.org/wiki/Main_Page
-Documentação (português brasileiro): https://love2d.org/wiki/Main_Page_(Portugu%C3%AAs)
-
+- Site: <https://love2d.org/>
+- [Documentação (inglês)](https://love2d.org/wiki/Main_Page)
+- [Documentação (português brasileiro)](https://love2d.org/wiki/Main_Page_(Portugu%C3%AAs))
+- Links, tutoriais e referências para Love2D [nesta página](love2d.md).
