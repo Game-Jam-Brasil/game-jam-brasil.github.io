@@ -15,11 +15,6 @@ body.dark-mode {
     color:rgba(255, 255, 255, 0.5);
 }
 
-pre {
-    background-color: rgb(34, 39, 46);
-    border: 1px solid #767;
-}
-
 article,
 aside,
 details,
@@ -6492,8 +6487,8 @@ pre {
     font-size: 100%;
     word-break: normal;
     white-space: pre;
-    background: transparent;
-    border: 0
+    background-color: rgb(34, 39, 46);
+    border: 1px solid #767;
 }
 
 .markdown-body .highlight {
