@@ -2,84 +2,96 @@
 
 <head>
     <title>Game Jam Brasil</title>
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+        <h1 id="love2d">Love2D</h1>
 
-<h1 id="love2d">Love2D</h1>
-
-<p>Love2D é uma engine/framework para jogos que usa a linguagem Lua para programação. Suporta boa parte das ações
-    necessárias para jogos.</p>
-<ul>
-    <li>inicialização e loop de gameplay com delta time (love.init e love.update);</li>
-    <li>desenho de imagens e primitivas (love.draw), com opção de recorte para spritesheets (clipping, com quad) e
-        composição (canvas);</li>
-    <li>primitivas variadas (círculos, retângulos, polígonos, etc);</li>
-    <li>carregamento e uso de assets (imagens, áudio, fontes);</li>
-    <li>suporte a input, com funções prontas para verificações diversas (via sdl):<ul>
-            <li>suporte à teclado e mouse</li>
-            <li>suporte à joysticks, com opções de mapeamento</li>
-            <li>verificar se tecla, botões do mouse e controles está pressionado no update (ex: love.keyboard.isDown)
+        <p>Love2D é uma engine/framework para jogos que usa a linguagem Lua para programação. Suporta boa parte das
+            ações
+            necessárias para jogos.</p>
+        <ul>
+            <li>inicialização e loop de gameplay com delta time (love.init e love.update);</li>
+            <li>desenho de imagens e primitivas (love.draw), com opção de recorte para spritesheets (clipping, com quad)
+                e
+                composição (canvas);</li>
+            <li>primitivas variadas (círculos, retângulos, polígonos, etc);</li>
+            <li>carregamento e uso de assets (imagens, áudio, fontes);</li>
+            <li>suporte a input, com funções prontas para verificações diversas (via sdl):<ul>
+                    <li>suporte à teclado e mouse</li>
+                    <li>suporte à joysticks, com opções de mapeamento</li>
+                    <li>verificar se tecla, botões do mouse e controles está pressionado no update (ex:
+                        love.keyboard.isDown)
+                    </li>
+                    <li>callbacks para pressionar e soltar teclas (love.keypressed, love.keypressed)</li>
+                </ul>
             </li>
-            <li>callbacks para pressionar e soltar teclas (love.keypressed, love.keypressed)</li>
+            <li>operações visuais como transladação, escala e rotação (translate, scale e rotate)</li>
+            <li>bom desempenho para jogos 2D simples</li>
         </ul>
-    </li>
-    <li>operações visuais como transladação, escala e rotação (translate, scale e rotate)</li>
-    <li>bom desempenho para jogos 2D simples</li>
-</ul>
-<h2 id="observa-es-gerais-sobre-a-linguagem-lua">Observações gerais sobre a linguagem Lua</h2>
-<p>Documentação resumida: <a
-        href="https://www.lua.org/manual/5.4/manual.html#2.1">https://www.lua.org/manual/5.4/manual.html#2.1</a></p>
-<p>Lua suporta vários tipos básicos e strings, com tipagem fraca:</p>
-<ul>
-    <li>nil para valores nulos</li>
-    <li>boolean</li>
-    <li>number (todos os números operam da mesma forma, podem ser tratados como inteiros ou floats/doubles dependendo do
-        contexto e operações realizadas)</li>
-    <li>function</li>
-    <li>table (tabelas e estruturas em geral)</li>
-    <li>userdata</li>
-    <li>threads</li>
-</ul>
-<h4 id="sintaxe-b-sica">Sintaxe básica</h4>
-<ul>
-    <li>comentários básicos usam dois hífens seguidos <strong>--</strong></li>
-    <li>atribuição com sinal de igual <em>=</em></li>
-    <li>comparação com<ul>
-            <li>igualdade <strong>==</strong></li>
-            <li>maior e menor &gt; &lt;</li>
-            <li>diferença <strong>~=</strong> (til e igual)</li>
-            <li>negação <strong>~</strong> (til)</li>
+        <h2 id="observa-es-gerais-sobre-a-linguagem-lua">Observações gerais sobre a linguagem Lua</h2>
+        <p>Documentação resumida: <a
+                href="https://www.lua.org/manual/5.4/manual.html#2.1">https://www.lua.org/manual/5.4/manual.html#2.1</a>
+        </p>
+        <p>Lua suporta vários tipos básicos e strings, com tipagem fraca:</p>
+        <ul>
+            <li>nil para valores nulos</li>
+            <li>boolean</li>
+            <li>number (todos os números operam da mesma forma, podem ser tratados como inteiros ou floats/doubles
+                dependendo do
+                contexto e operações realizadas)</li>
+            <li>function</li>
+            <li>table (tabelas e estruturas em geral)</li>
+            <li>userdata</li>
+            <li>threads</li>
         </ul>
-    </li>
-    <li>blocos (funções, ifs) terminam com <strong>end</strong></li>
-    <li><strong>if</strong> não requer parênteses (é opcional), usar <strong>then</strong> após <ul>
-            <li>if valor == 10 then do_something() end</li>
+        <h4 id="sintaxe-b-sica">Sintaxe básica</h4>
+        <ul>
+            <li>comentários básicos usam dois hífens seguidos <strong>--</strong></li>
+            <li>atribuição com sinal de igual <em>=</em></li>
+            <li>comparação com<ul>
+                    <li>igualdade <strong>==</strong></li>
+                    <li>maior e menor &gt; &lt;</li>
+                    <li>diferença <strong>~=</strong> (til e igual)</li>
+                    <li>negação <strong>~</strong> (til)</li>
+                </ul>
+            </li>
+            <li>blocos (funções, ifs) terminam com <strong>end</strong></li>
+            <li><strong>if</strong> não requer parênteses (é opcional), usar <strong>then</strong> após <ul>
+                    <li>if valor == 10 then do_something() end</li>
+                </ul>
+            </li>
+            <li>não há switch/case, usa-se if/elseif encadeados</li>
+            <li>for, while e repeat (do..while) são as</li>
         </ul>
-    </li>
-    <li>não há switch/case, usa-se if/elseif encadeados</li>
-    <li>for, while e repeat (do..while) são as</li>
-</ul>
-<h4 id="escopo">Escopo</h4>
-<p>Lua tem escopo <strong>global</strong> para variáveis e funções (basicamente, o inverso de python). Para usar o
-    escopo local (que é recomendado, especialmente para variáveis dentro de funções), declare a variável como
-    <strong>local</strong>:</p>
-<pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">teste</span><span class="hljs-params">()</span></span>
+        <h4 id="escopo">Escopo</h4>
+        <p>Lua tem escopo <strong>global</strong> para variáveis e funções (basicamente, o inverso de python). Para usar
+            o
+            escopo local (que é recomendado, especialmente para variáveis dentro de funções), declare a variável como
+            <strong>local</strong>:
+        </p>
+        <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">teste</span><span class="hljs-params">()</span></span>
     <span class="hljs-keyword">local</span> variavel = <span class="hljs-number">10</span>
     <span class="hljs-built_in">print</span>(variavel)
 <span class="hljs-keyword">end</span>
 </code></pre>
-<h4 id="tabelas">Tabelas</h4>
-<p>Tabelas são a estrutura &quot;tudo em um&quot; da linguagem, funcionando como listas, coleções, hashmaps,
-    &quot;objetos&quot; e estruturas. Fica na mão do desenvolvedor gerenciar o uso delas, de acordo com o contexto.</p>
-<p>IMPORTANTE: tabelas indexadas tem índice inicial <strong>um</strong>, não zero como em outras linguagens. Operações
-    com tabelas podem ser feitas diretas sobre os índices (similar à javascript) ou usando funções específicas
-    (table.insert, table.remove, table.sort)</p>
-<p>O tamanho de uma tabela pode ser obtido com o operador # (hashtag). Valores podem ser acessados pelo índice ou chaves
-    (como em um hashtable). Tabelas podem conter quaisquer tipos de dados, inclusive outras tabelas. Loops podem ser
-    usados para percorrer tabelas. No caso do acesso por chaves, as funções pairs e ipairs podem ser usadas.</p>
-<p>Exemplo:</p>
-<pre><code><span class="hljs-comment">-- tabela simples, índices numéricos</span>
+        <h4 id="tabelas">Tabelas</h4>
+        <p>Tabelas são a estrutura &quot;tudo em um&quot; da linguagem, funcionando como listas, coleções, hashmaps,
+            &quot;objetos&quot; e estruturas. Fica na mão do desenvolvedor gerenciar o uso delas, de acordo com o
+            contexto.</p>
+        <p>IMPORTANTE: tabelas indexadas tem índice inicial <strong>um</strong>, não zero como em outras linguagens.
+            Operações
+            com tabelas podem ser feitas diretas sobre os índices (similar à javascript) ou usando funções específicas
+            (table.insert, table.remove, table.sort)</p>
+        <p>O tamanho de uma tabela pode ser obtido com o operador # (hashtag). Valores podem ser acessados pelo índice
+            ou chaves
+            (como em um hashtable). Tabelas podem conter quaisquer tipos de dados, inclusive outras tabelas. Loops podem
+            ser
+            usados para percorrer tabelas. No caso do acesso por chaves, as funções pairs e ipairs podem ser usadas.</p>
+        <p>Exemplo:</p>
+        <pre><code><span class="hljs-comment">-- tabela simples, índices numéricos</span>
 <span class="hljs-keyword">local</span> uma_tabela = {}
 <span class="hljs-built_in">table</span>.insert(uma_tabela, <span class="hljs-string">"Love2D"</span>)
 <span class="hljs-built_in">table</span>.insert(uma_tabela, <span class="hljs-number">9.83</span>)
@@ -100,32 +112,38 @@ outra_tabela[<span class="hljs-string">"fim"</span>] = <span class="hljs-string"
     <span class="hljs-built_in">print</span>(v)
 <span class="hljs-keyword">end</span>
 </code></pre>
-<h4 id="suporte-orienta-o-a-objetos">Suporte à orientação a objetos</h4>
-<p>Lua é uma linguagem multi-paradigma, puxando para o lado funcional (similar Python). Há várias opções para usar a
-    linguagem, e suporte &quot;indireto&quot; à orientação à objetos. É posível programar em uma forma similar à OO
-    tradicional diretamente na linguagem, ou usar bibliotecas que facilitam essa operação (ver na lista abaixo de
-    bibliotecas para Love2D).</p>
-<h2 id="observa-es-gerais-sobre-a-love2d">Observações gerais sobre a Love2D</h2>
-<h4 id="rodando-e-gerando-execut-veis">Rodando e gerando executáveis</h4>
-<p>Os projetos podem rodar de algumas formas:</p>
-<ul>
-    <li>diretamente a partir do executável love.exe, apontando para a pasta que contém o main.lua</li>
-    <li>criando arquivos compactados (zip) com extensão love</li>
-    <li>gerando executáveis simples (combinando o love.exe com a pasta zipada contendo o main.lua)</li>
-</ul>
-<h4 id="suporte-web-limitado">Suporte à web é limitado</h4>
-<p>Links gerais:</p>
-<ul>
-    <li>
-        <p><a href="https://github.com/love2d-community/awesome-love2d"
-                target="_blank">https://github.com/love2d-community/awesome-love2d</a> : lista de bibliotecas, projetos
-            e outros recursos sobre a Love2D, tais como:</p>
-    </li>
-    <li>
-        <p>bibliotecas para gerenciar cenas/fases</p>
-    </li>
-    <li>suporte à orientação de objetos</li>
-</ul>
+        <h4 id="suporte-orienta-o-a-objetos">Suporte à orientação a objetos</h4>
+        <p>Lua é uma linguagem multi-paradigma, puxando para o lado funcional (similar Python). Há várias opções para
+            usar a
+            linguagem, e suporte &quot;indireto&quot; à orientação à objetos. É posível programar em uma forma similar à
+            OO
+            tradicional diretamente na linguagem, ou usar bibliotecas que facilitam essa operação (ver na lista abaixo
+            de
+            bibliotecas para Love2D).</p>
+        <h2 id="observa-es-gerais-sobre-a-love2d">Observações gerais sobre a Love2D</h2>
+        <h4 id="rodando-e-gerando-execut-veis">Rodando e gerando executáveis</h4>
+        <p>Os projetos podem rodar de algumas formas:</p>
+        <ul>
+            <li>diretamente a partir do executável love.exe, apontando para a pasta que contém o main.lua</li>
+            <li>criando arquivos compactados (zip) com extensão love</li>
+            <li>gerando executáveis simples (combinando o love.exe com a pasta zipada contendo o main.lua)</li>
+        </ul>
+        <h4 id="suporte-web-limitado">Suporte à web é limitado</h4>
+        <p>Links gerais:</p>
+        <ul>
+            <li>
+                <p><a href="https://github.com/love2d-community/awesome-love2d"
+                        target="_blank">https://github.com/love2d-community/awesome-love2d</a> : lista de bibliotecas,
+                    projetos
+                    e outros recursos sobre a Love2D, tais como:</p>
+            </li>
+            <li>
+                <p>bibliotecas para gerenciar cenas/fases</p>
+            </li>
+            <li>suporte à orientação de objetos</li>
+        </ul>
+
+    </div>
 
 </body>
 
