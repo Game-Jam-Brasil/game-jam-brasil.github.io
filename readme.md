@@ -18,4 +18,4 @@ Links, tutoriais e referências para Godot [nesta página](/godot.md).
 - <a href="https://love2d.org/wiki/Main_Page" target="_blank">Documentação em Inglês</a>
 - <a href="https://love2d.org/wiki/Main_Page_(Portugu%C3%AAs)" target="_blank">Documentação em Português</a>
 
-Links, tutoriais e referências para Love2D <a href="love2d.md">nesta página</a>.
+Links, tutoriais e referências para Love2D <a href="love2d">nesta página</a>.

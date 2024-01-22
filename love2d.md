@@ -17,7 +17,7 @@ Love2D é uma engine/framework para jogos que usa a linguagem Lua para programa�
 
 ## Observações gerais sobre a linguagem Lua
 
-Documentação bem resumida: https://www.lua.org/manual/5.4/manual.html#2.1 
+Documentação resumida: <a href="https://www.lua.org/manual/5.4/manual.html#2.1">https://www.lua.org/manual/5.4/manual.html#2.1</a>
 
 Lua suporta vários tipos básicos e strings, com tipagem fraca:
 
@@ -29,6 +29,20 @@ Lua suporta vários tipos básicos e strings, com tipagem fraca:
 - userdata
 - threads
 
+#### Sintaxe básica
+
+- comentários básicos usam dois hífens seguidos **--**
+- atribuição com sinal de igual *=*
+- comparação com
+    - igualdade **==**
+    - maior e menor  &gt; &lt;
+    - diferença **~=** (til e igual)
+    - negação **~**  (til)
+- blocos (funções, ifs) terminam com **end**
+- **if** não requer parênteses (é opcional), usar **then** após 
+    - if valor == 10 then do_something() end
+- não há switch/case, usa-se if/elseif encadeados
+- for, while e repeat (do..while) são as
 
 #### Escopo
 
@@ -36,7 +50,8 @@ Lua tem escopo **global** para variáveis e funções (basicamente, o inverso de
 
 ```
 function teste()
-    local varivel = 10
+    local variavel = 10
+    print(variavel)
 end
 ```
 
@@ -45,6 +60,33 @@ end
 Tabelas são a estrutura "tudo em um" da linguagem, funcionando como listas, coleções, hashmaps, "objetos" e estruturas. Fica na mão do desenvolvedor gerenciar o uso delas, de acordo com o contexto.
 
 IMPORTANTE: tabelas indexadas tem índice inicial **um**, não zero como em outras linguagens. Operações com tabelas podem ser feitas diretas sobre os índices (similar à javascript) ou usando funções específicas (table.insert, table.remove, table.sort)
+
+O tamanho de uma tabela pode ser obtido com o operador # (hashtag). Valores podem ser acessados pelo índice ou chaves (como em um hashtable). Tabelas podem conter quaisquer tipos de dados, inclusive outras tabelas. Loops podem ser usados para percorrer tabelas. No caso do acesso por chaves, as funções pairs e ipairs podem ser usadas.
+
+Exemplo:
+
+```
+-- tabela simples, índices numéricos
+local uma_tabela = {}
+table.insert(uma_tabela, "Love2D")
+table.insert(uma_tabela, 9.83)
+table.insert(uma_tabela, false)
+
+for i = 1, #uma_tabela do
+    print(uma_tabela[i])
+end
+
+local outra_tabela = {}
+
+outra_tabela["inicio"] = 1
+outra_tabela["meio"] = 9
+outra_tabela["fim"] = "Menu"
+
+-- acessando como par de chave/valor. k contém a chave, v contém o valor (esses nomes podem ser diferentes)
+for k,v in pairs(outra_tabela) do
+    print(v)
+end
+```
 
 #### Suporte à orientação a objetos
 
